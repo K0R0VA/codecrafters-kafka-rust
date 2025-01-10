@@ -27,6 +27,8 @@ async fn main() -> std::io::Result<()> {
 
                 stream.write_all(&[0, 0, 0, 4])?;
                 stream.write_all(&correlation_id.to_be_bytes())?;
+                stream.write_all(&[0, 35])?;
+
 
             }
             Err(e) => {
